@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Ngopi Akbar</title>
+    <meta
+      name="description"
+      content="Undangan Eksklusif Ngopi Akbar di Pondok Al-Idrus"
+    />
+    <meta name="author" content="ANGGOTA BIKINI BOTTOM" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #8b0000;
+        --secondary: #cd5c5c;
+        --accent: #d4af37;
+        --light: #fffaf0;
+        --dark: #333;
+      }
+
+      body {
+        font-family: "Playfair Display", serif;
+        margin: 0;
+        padding: 0;
+        background: url("https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1000")
+          center/cover no-repeat fixed;
+        color: var(--dark);
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 250, 240, 0.85);
+        z-index: 0;
+      }
+
+      .undangan-container {
+        width: 85%;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 60px;
+        background-color: var(--light);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1.5s ease-out;
+        overflow: hidden;
+        border: 1px solid var(--accent);
+      }
+
+      .undangan-container::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 2px dashed var(--accent);
+        border-radius: 15px;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+        animation: fadeInDown 1.2s ease-in-out;
+      }
+
+      .header h1 {
+        color: var(--primary);
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header p {
+        font-family: "Dancing Script", cursive;
+        color: var(--secondary);
+        font-size: clamp(24px, 3vw, 32px);
+        margin-top: 0;
+        position: relative;
+        display: inline-block;
+      }
+
+      .header p::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--primary),
+          var(--accent),
+          var(--primary)
+        );
+        border-radius: 3px;
+      }
+
+      .content {
+        line-height: 1.8;
+        text-align: justify;
+        animation: fadeIn 1.5s ease-in-out;
+        font-size: clamp(15px, 2vw, 17px);
+      }
+
+      .event-details {
+        text-align: center;
+        margin: 30px 0;
+        padding: 25px;
+        background: rgba(205, 92, 92, 0.1);
+        border-left: 5px solid var(--primary);
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .event-details::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.3)
+        );
+        z-index: -1;
+      }
+
+      .event-details:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        background: rgba(205, 92, 92, 0.15);
+      }
+
+      .event-details p {
+        margin: 10px 0;
+        display: inline-block;
+        padding: 0 15px;
+        position: relative;
+      }
+
+      .event-details p::after {
+        content: "✦";
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--accent);
+        font-size: 12px;
+      }
+
+      .event-details p:last-child::after {
+        display: none;
+      }
+
+      .signature {
+        margin-top: 60px;
+        text-align: right;
+        animation: fadeInRight 1.5s ease-in-out;
+        position: relative;
+      }
+
+      .signature p:first-child {
+        margin-bottom: 5px;
+        font-style: italic;
+        color: var(--secondary);
+      }
+
+      .signature p:last-child {
+        font-weight: bold;
+        color: var(--primary);
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      .signature::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        right: 0;
+        width: 150px;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--accent),
+          transparent
+        );
+      }
+
+      .footer {
+        margin-top: 50px;
+        text-align: center;
+        font-style: italic;
+        color: var(--dark);
+        font-size: clamp(13px, 1.8vw, 15px);
+        animation: fadeInUp 1.5s ease-in-out;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--accent),
+          transparent
+        );
+      }
+
+      .btn-print {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px auto 0;
+        padding: 12px 30px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        font-size: clamp(13px, 1.8vw, 15px);
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn-print::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .btn-print:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-print:hover::before {
+        opacity: 1;
+      }
+
+      .btn-print i {
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      .floating-coffee {
+        position: absolute;
+        font-size: 24px;
+        color: var(--primary);
+        opacity: 0.2;
+        animation: float 8s ease-in-out infinite;
+        z-index: 0;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(10deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .undangan-container {
+          width: 90%;
+          padding: 40px 30px;
+        }
+        .signature {
+          margin-top: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .undangan-container {
+          padding: 30px 20px;
+        }
+        .content {
+          text-align: left;
+        }
+        .btn-print {
+          padding: 10px 20px;
+        }
+      }
+
+      @media print {
+        body::before,
+        .floating-coffee,
+        .btn-print {
+          display: none !important;
+        }
+        .undangan-container {
+          box-shadow: none !important;
+          animation: none !important;
+          transform: none !important;
+          border: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Coffee Elements -->
+    <i
+      class="floating-coffee fas fa-coffee"
+      style="top: 10%; left: 5%; animation-delay: 0s"
+      aria-hidden="true"
+    ></i>
+    <i
+      class="floating-coffee fas fa-mug-hot"
+      style="top: 30%; right: 8%; animation-delay: 2s"
+      aria-hidden="true"
+    ></i>
+    <i
+      class="floating-coffee fas fa-coffee"
+      style="bottom: 15%; left: 7%; animation-delay: 4s"
+      aria-hidden="true"
+    ></i>
+    <i
+      class="floating-coffee fas fa-mug-hot"
+      style="bottom: 25%; right: 5%; animation-delay: 1s"
+      aria-hidden="true"
+    ></i>
+
+    <div class="undangan-container" id="undangan">
+      <div class="header">
+        <h1>UNDANGAN EKSKLUSIF</h1>
+        <p>Ngopi Akbar</p>
+      </div>
+
+      <div class="content">
+        <p>Dengan hormat,</p>
+        <p>
+          <strong>Kumpul Bareng KAWAN-KAWAN</strong>, dengan penuh kebahagiaan
+          kami mengundang Anda untuk hadir dalam acara spesial:
+        </p>
+
+        <div class="event-details">
+          <p><strong>Hari/Tanggal:</strong> Sabtu, 21 Juni 2025</p>
+          <p><strong>Pukul:</strong> 20.00 WIB</p>
+          <p><strong>Tempat:</strong> Pondok Al-Idrus</p>
+        </div>
+
+        <p>
+          Acara ini akan menjadi momen spesial untuk mempererat silaturahmi
+          sambil menikmati sajian kopi pilihan. Atas kehadiran dan
+          partisipasinya, kami ucapkan terima kasih.
+        </p>
+      </div>
+
+      <div class="signature">
+        <p>Salam hangat,</p>
+        <p><strong> BIKINI BOTTOM</strong></p>
+      </div>
+
+      <div class="footer">
+        Merupakan suatu kehormatan bagi kami atas kehadiran teman-teman.
+      </div>
+
+      <div style="text-align: center">
+        <button class="btn-print" onclick="window.print()">
+          <i class="fas fa-print"></i> Cetak Undangan
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const container = document.getElementById("undangan");
+
+      if (window.innerWidth > 768) {
+        document.addEventListener("mousemove", (e) => {
+          const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+          const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+          container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        container.addEventListener("mouseleave", () => {
+          container.style.transform = "rotateY(0deg) rotateX(0deg)";
+        });
+      }
+    </script>
+  </body>
+</html>
